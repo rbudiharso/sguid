@@ -1,14 +1,8 @@
 // @flow
 
 import nacl from 'tweetnacl';
-import {
-  decodeBase64,
-  decodeUTF8,
-  encodeBase64
-} from 'tweetnacl-util';
-import {
-  escape as urlEscape
-} from 'base64-url';
+// eslint-disable-next-line import/no-namespace
+import * as base64 from '@stablelib/base64';
 import {
   SguidError
 } from './errors';
@@ -41,10 +35,10 @@ const toSguid: ToSguidType = (base64SecretKey, namespace, type, id) => {
     type
   });
 
-  const secretKey = decodeBase64(base64SecretKey);
-  const message = decodeUTF8(payload);
+  const secretKey = base64.decode(base64SecretKey);
+  const message = Buffer.from(payload);
 
-  return urlEscape(encodeBase64(nacl.sign(message, secretKey)));
+  return base64.encodeURLSafe(nacl.sign(message, secretKey));
 };
 
 export default toSguid;

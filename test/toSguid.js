@@ -29,5 +29,5 @@ test('throws error if the resource identifier value is (coerced) false ', (t): v
 test('signs message', (t): void => {
   const sguidId = toSguid(secretKey, 'bar', 'baz', 1);
 
-  t.true(sguidId === 'xT9-z0JflGBb-RI0YBw8LCLLDLj2bvhfxMBbqWj2YUgastzMi4s1T49-cyvpuQ35QUWIxUdOtfp1lWVlf4RjAnsiaWQiOjEsIm5hbWVzcGFjZSI6ImJhciIsInR5cGUiOiJiYXoifQ');
+  t.true(sguidId === 'xT9-z0JflGBb-RI0YBw8LCLLDLj2bvhfxMBbqWj2YUgastzMi4s1T49-cyvpuQ35QUWIxUdOtfp1lWVlf4RjAnsiaWQiOjEsIm5hbWVzcGFjZSI6ImJhciIsInR5cGUiOiJiYXoifQ==');
 });
