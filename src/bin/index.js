@@ -14,10 +14,10 @@ yargs
       const keyPair = nacl.sign.keyPair();
 
       // eslint-disable-next-line no-console
-      console.log('secret key:', base64.encode(keyPair.secretKey));
+      console.log('secret key:', base64.encodeURLSafe(keyPair.secretKey));
 
       // eslint-disable-next-line no-console
-      console.log('public key:', base64.encode(keyPair.publicKey));
+      console.log('public key:', base64.encodeURLSafe(keyPair.publicKey));
     }
   })
   .demandCommand(1)

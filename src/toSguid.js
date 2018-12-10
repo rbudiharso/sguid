@@ -37,7 +37,7 @@ const toSguid: ToSguidType = (base64SecretKey, namespace, type, id) => {
     type
   });
 
-  const secretKey = base64.decode(base64SecretKey);
+  const secretKey = base64.decodeURLSafe(base64SecretKey);
   const message = utf8.encode(payload);
 
   return base64.encodeURLSafe(nacl.sign(message, secretKey));
