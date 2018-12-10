@@ -65,7 +65,7 @@
     "precommit": "npm run test && npm run lint",
     "test": "NODE_ENV=development ava --verbose"
   },
-  "version": "1.1.0",
+  "version": "1.2.0",
   "bugs": {
     "url": "https://github.com/rbudiharso/sguid/issues"
   },
