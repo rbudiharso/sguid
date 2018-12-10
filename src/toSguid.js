@@ -3,6 +3,8 @@
 import nacl from 'tweetnacl';
 // eslint-disable-next-line import/no-namespace
 import * as base64 from '@stablelib/base64';
+// eslint-disable-next-line import/no-namespace
+import * as utf8 from '@stablelib/utf8';
 import {
   SguidError
 } from './errors';
@@ -36,7 +38,7 @@ const toSguid: ToSguidType = (base64SecretKey, namespace, type, id) => {
   });
 
   const secretKey = base64.decode(base64SecretKey);
-  const message = Buffer.from(payload);
+  const message = utf8.encode(payload);
 
   return base64.encodeURLSafe(nacl.sign(message, secretKey));
 };
